@@ -39,7 +39,7 @@ public class Runner {
         }
 
 /*
-        //С уникальными длинами
+        //С уникальными num
         for (int i = 0, k = 1; i < lens.length; k++) {
             for (int j = 0; j < k && i < lens.length; j++) {
                 lens[i++] = k;
