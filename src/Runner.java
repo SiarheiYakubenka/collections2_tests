@@ -12,21 +12,24 @@ public class Runner {
 
         int[] lens = new int[10_000_000];
 /*
+        //Равномерно распределенные с 100000 уникальных длин
         Random random = new Random();
         for (int i = 0; i < lens.length; i++ ) {
             lens[i] = 1 + random.nextInt(100000);
         }
 */
+        //Упорядочены по возрастанию
         for (int i = 0; i < lens.length; i++ ) {
             lens[i] = i + 1;
         }
 /*
+        //Уполрядочены по убыванию
         for (int i = lens.length -1; i >= 0; i-- ) {
             lens[i] = i + 1;
         }
 
 
-
+        //Почти упорядоченный
         for (int i = 0; i < 9_000_000; i++ ) {
             lens[i] = i + 1;
         }
@@ -36,17 +39,16 @@ public class Runner {
         }
 
 
+        //С уникальными длинами
         for (int i = 0, k = 1; i < lens.length; k++) {
             for (int j = 0; j < k && i < lens.length; j++) {
                 lens[i++] = k;
             }
         }
-
         Integer[] lensInt = new Integer[10_000_000];
         for (int i = 0; i < lens.length; i++) {
             lensInt[i] = lens[i];
         }
-
         List<Integer> lst = Arrays.asList(lensInt);
         Collections.shuffle(lst);
         lensInt = lst.toArray(lensInt);
